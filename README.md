@@ -27,3 +27,10 @@ Learning kotlin programming by practicing codes from "Head First Kotlin" Book. T
 • [`123_page-Code_Magnets_Fruits_Exercise.kt`](02_Chapter-Types_and_Variables/123_page-Code_Magnets_Fruits_Exercise.kt)
 
 • [`124_page-Mixed_References_Exercise.kt`](02_Chapter-Types_and_Variables/124_page-Mixed_References_Exercise.kt)
+
+
+## [Chapter 3](03_Chapter-Functions)
+
+• [`133_page-Rock_Paper_Scissor.kt`](03_Chapter-Functions/133_page-Rock_Paper_Scissor.kt)
+
+• [`163_page-Mixed_Messages_Exercise.kt`](03_Chapter-Functions/163_page-Mixed_Messages_Exercise.kt)
