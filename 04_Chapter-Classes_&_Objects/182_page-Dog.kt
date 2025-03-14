@@ -1,4 +1,4 @@
-// HFK C4 page 182 - Dog class
+// HFK C4 page 182-215 - Dog class
 
 //Dog Class
 class Dog(val name: String, weight_param: Int, val breed: String) {
@@ -25,12 +25,13 @@ class Dog(val name: String, weight_param: Int, val breed: String) {
 // Main function
 fun main() {
 
+    // My Dog
 	var myDog = Dog("Fido", 15, "Mixed")
-
-    var friendsDog = Dog("Hudo", -1, "Golden Retreiver")
     println()
 
-    println(myDog.name)
+    println("Name: ${myDog.name}")
+    println("Breed: ${myDog.breed}")
+    print("Bark: ")
     myDog.bark()
     println("Weight: ${myDog.weight}")
     println("Weight in kg: ${myDog.weightInKgs}")
@@ -38,13 +39,26 @@ fun main() {
     print("My dog enjoys: ")
     for (item in myDog.activities) print("$item, ")
 
-    println(); println()
+    println(); println(); println()
 
-    println(friendsDog.name)
+    // Friends Dog
+    var friendsDog = Dog("Hudo", -1, "Golden Retreiver")
+    println()
+
+    println("Name: ${friendsDog.name}")
+    println("Breed: ${friendsDog.breed}")
+    print("Bark: ")
     friendsDog.bark()
+
     println("Weight: ${friendsDog.weight}")
     println("Weight in kg: ${friendsDog.weightInKgs}")
+    friendsDog.weight = -2
+    println("Weight: ${friendsDog.weight}")
+    println("Weight in kg: ${friendsDog.weightInKgs}")
+
     friendsDog.activities = arrayOf("Walks", "Runs", "Jumps", "Frisbee")
     print("Friends dog enjoys: ")
     for (item in friendsDog.activities) print("$item, ")
+
 }
+
