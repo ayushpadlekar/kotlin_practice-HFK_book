@@ -34,3 +34,14 @@ Learning kotlin programming by practicing codes from "Head First Kotlin" Book. T
 • [`133_page-Rock_Paper_Scissor.kt`](03_Chapter-Functions/133_page-Rock_Paper_Scissor.kt)
 
 • [`163_page-Mixed_Messages_Exercise.kt`](03_Chapter-Functions/163_page-Mixed_Messages_Exercise.kt)
+
+
+## [Chapter 4](04_Chapter-Classes_&_Objects)
+
+• [`182_page-Dog.kt`](04_Chapter-Classes_&_Objects/182_page-Dog.kt)
+
+• [`186_page-Songs_App.kt`](04_Chapter-Classes_&_Objects/186_page-Songs_App.kt)
+
+• [`195_page-Code_Magnets_Exercise.kt`](04_Chapter-Classes_&_Objects/195_page-Code_Magnets_Exercise.kt)
+
+• [`217_page-Pool_Puzzle_Exercise.kt`](04_Chapter-Classes_&_Objects/217_page-Pool_Puzzle_Exercise.kt)
