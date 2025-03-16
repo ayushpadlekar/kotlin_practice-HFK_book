@@ -1,7 +1,7 @@
 # Kotlin Practice with "Head First Kotlin" book
 Learning kotlin programming by practicing codes from "Head First Kotlin" Book. The book contains 12 Chapters.
 
-> Aim :- To gain deep knowledge & hands on with Kotlin programming language.
+> Aim :- To gain deep knowledge & hands on practice of Kotlin programming language.
 
 ## [Chapter 1](01_Chapter-Getting_Started)
 
@@ -45,3 +45,18 @@ Learning kotlin programming by practicing codes from "Head First Kotlin" Book. T
 • [`195_page-Code_Magnets_Exercise.kt`](04_Chapter-Classes_&_Objects/195_page-Code_Magnets_Exercise.kt)
 
 • [`217_page-Pool_Puzzle_Exercise.kt`](04_Chapter-Classes_&_Objects/217_page-Pool_Puzzle_Exercise.kt)
+
+
+## [Chapter 5](05_Chapter-Subclass_Superclass_Inheritance)
+
+• [`242_page-Animal_Class_Inheritance.kt`](05_Chapter-Subclass_Superclass_Inheritance/242_page-Animal_Class_Inheritance.kt)
+
+• [`270_page-Be_The_Compiler_Exercise.kt`](05_Chapter-Subclass_Superclass_Inheritance/270_page-Be_The_Compiler_Exercise.kt)
+
+
+## [Chapter 6](06_Chapter-Abstract_Classes_&_Interfaces)
+
+• [`290_page-Abstract_Animal_Class_&_Interfaces.kt`](06_Chapter-Abstract_Classes_&_Interfaces/290_page-Abstract_Animal_Class_&_Interfaces.kt)
+
+• [`324_page-Be_The_Compiler_Exercise.kt`](06_Chapter-Abstract_Classes_&_Interfaces/324_page-Be_The_Compiler_Exercise.kt)
+
