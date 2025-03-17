@@ -60,3 +60,10 @@ Learning kotlin programming by practicing codes from "Head First Kotlin" Book. T
 
 • [`324_page-Be_The_Compiler_Exercise.kt`](06_Chapter-Abstract_Classes_&_Interfaces/324_page-Be_The_Compiler_Exercise.kt)
 
+
+## [Chapter 7](07_Chapter-Data_Classes)
+
+• [`344_page-Recipes_Project.kt`](07_Chapter-Data_Classes/344_page-Recipes_Project.kt)
+
+• [`347_page-Mixed_Messages_Exercise.kt`](07_Chapter-Data_Classes/347_page-Mixed_Messages_Exercise.kt)
+
