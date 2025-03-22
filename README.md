@@ -77,3 +77,16 @@ Learning kotlin programming by practicing codes from "Head First Kotlin" Book. T
 • [`415_page-Code_Magnets_Exercise.kt`](08_Chapter-Nulls_&_Exceptions/415_page-Code_Magnets_Exercise.kt)
 
 
+## [Chapter 9](09_Chapter-Collections_List_Set_Map)
+
+• [`423_page-Array_Functions_Use.kt`](09_Chapter-Collections_List_Set_Map/423_page-Array_Functions_Use.kt)
+
+• [`428_page-Lists_MutableLists_Practice.kt`](09_Chapter-Collections_List_Set_Map/428_page-Lists_MutableLists_Practice.kt)
+
+• [`456_page-Sets_Practice.kt`](09_Chapter-Collections_List_Set_Map/456_page-Sets_Practice.kt)
+
+• [`461_page-Sharpen_Your_Pencil_Exercise.kt`](09_Chapter-Collections_List_Set_Map/461_page-Sharpen_Your_Pencil_Exercise.kt)
+
+• [`465_page-Maps_MutableMaps_Practice.kt`](09_Chapter-Collections_List_Set_Map/465_page-Maps_MutableMaps_Practice.kt)
+
+• [`475-479_page-PoolPuzzle_&_MixedMessages_Exercise.kt`](09_Chapter-Collections_List_Set_Map/475-479_page-PoolPuzzle_&_MixedMessages_Exercise.kt)
