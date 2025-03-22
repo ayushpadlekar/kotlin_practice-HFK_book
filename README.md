@@ -67,3 +67,13 @@ Learning kotlin programming by practicing codes from "Head First Kotlin" Book. T
 
 • [`347_page-Mixed_Messages_Exercise.kt`](07_Chapter-Data_Classes/347_page-Mixed_Messages_Exercise.kt)
 
+
+## [Chapter 8](08_Chapter-Nulls_&_Exceptions)
+
+• [`394_page-Null_Values_Project.kt`](08_Chapter-Nulls_&_Exceptions/394_page-Null_Values_Project.kt)
+
+• [`414_page-Sharpen_Your_Pencil_Exercise.kt`](08_Chapter-Nulls_&_Exceptions/414_page-Sharpen_Your_Pencil_Exercise.kt)
+
+• [`415_page-Code_Magnets_Exercise.kt`](08_Chapter-Nulls_&_Exceptions/415_page-Code_Magnets_Exercise.kt)
+
+
