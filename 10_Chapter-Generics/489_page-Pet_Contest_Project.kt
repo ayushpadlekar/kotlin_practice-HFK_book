@@ -47,6 +47,23 @@ fun main() {
     println()
 
 
+    // Retailer sells
+    println("--- Retailer Sells -----------------------")
+
+    val dogRetailer: Retailer<Dog> = DogRetailer()
+    print("dogRetailer ")
+    dogRetailer.sell() // Sell Dog
+
+    val fishRetailer: Retailer<Fish> = FishRetailer()
+    print("fishRetailer ")
+    fishRetailer.sell() // Sell Fish
+
+    val catRetailer: Retailer<Cat> = CatRetailer()
+    print("catRetailer ")
+    catRetailer.sell() // Sell Cat
+    val petRetailer: Retailer<Pet> = CatRetailer()
+    print("petRetailer ")
+    petRetailer.sell() // Sell Cat
 	
 
     println(); println()
@@ -107,22 +124,37 @@ class Vet<T> {
 
 
 // Retailer interface Generic
-interface Retailer<T> {
+interface Retailer<out T> {
 
+    fun sell(): T
 }
 
 // CatRetailer Sub-class
 class CatRetailer: Retailer<Cat> {
+
+    override fun sell(): Cat {
+        println("Sell Cat")
+        return Cat("")
+    }
 
 }
 
 // DogRetailer Sub-class
 class DogRetailer: Retailer<Dog> {
 
+    override fun sell(): Dog {
+        println("Sell Dog")
+        return Dog("")
+    }
 }
 
 // FishRetailer Sub-class
 class FishRetailer: Retailer<Fish> {
     
+    override fun sell(): Fish {
+        println("Sell Fish")
+        return Fish("")
+    }
 }
+
 
