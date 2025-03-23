@@ -11,10 +11,14 @@ fun main() {
     val fishFinny = Fish("Finny")
     val fishMinny = Fish("Minny")
     val fishKinny = Fish("Kinny")
+    // Vet Objects
+    val catVet = Vet<Cat>()
+    val fishVet = Vet<Fish>()
+    val petVet = Vet<Pet>()
 
     // Cat Contest
     println("--- Cat Contest -----------------------")
-    val catContest = Contest<Cat>()
+    val catContest = Contest<Cat>(catVet)
     catContest.addScore(catMancho, 30)
     catContest.addScore(catRancho, 80)
     catContest.addScore(catTancho, 60)
@@ -26,7 +30,7 @@ fun main() {
 
     // Fish Contest
     println("--- Fish Contest -----------------------")
-    val fishContest = Contest<Fish>()
+    val fishContest = Contest<Fish>(fishVet)
     fishContest.addScore(fishFinny, 50)
     fishContest.addScore(fishMinny, 65)
     fishContest.addScore(fishKinny, 85)
@@ -37,13 +41,19 @@ fun main() {
 
     // Pet Contest
     println("--- Pet Contest -----------------------")
-    val petContest = Contest<Pet>()
+    val petContest = Contest<Pet>(petVet)
     petContest.addScore(fishFinny, 45)
     petContest.addScore(fishMinny, 55)
     petContest.addScore(catMancho, 35)
     println(petContest.scores)
     val petWon = petContest.getWinners().first()
     println("Winner: " + petWon.name)
+    println()
+
+    // Vet Treats Winners
+    catVet.treat(catWon)
+    fishVet.treat(fishWon)
+    petVet.treat(petWon)
     println()
 
 
@@ -93,7 +103,7 @@ class Fish(name: String): Pet(name) {
 
 
 // Contest class Generic
-class Contest<T: Pet> {
+class Contest<T: Pet>(var vet: Vet<T>) {
 
     var scores: MutableMap<T, Int> = mutableMapOf()
 
@@ -117,8 +127,11 @@ class Contest<T: Pet> {
 }
 
 // Vet class
-class Vet<T> {
+class Vet<T: Pet> {
 
+    fun treat(t: T) {
+        println("Vet Treated winner pet: ${t.name}")
+    }
 }
 
 
