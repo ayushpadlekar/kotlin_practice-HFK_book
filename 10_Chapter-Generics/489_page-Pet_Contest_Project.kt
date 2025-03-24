@@ -1,4 +1,5 @@
 // HFK C10 Page 489 - Generic Pet, Contest, Retailers, Vet
+// Generic types - invariant, co-variant(out), contra-variant(in)
 
 fun main() {
 
@@ -12,31 +13,31 @@ fun main() {
     val fishMinny = Fish("Minny")
     val fishKinny = Fish("Kinny")
     // Vet Objects
-    val catVet = Vet<Cat>()
-    val fishVet = Vet<Fish>()
-    val petVet = Vet<Pet>()
+    val petVet = Vet<Pet>()  // as we have used 'in' generic type in contest constructor,
+    // val catVet = Vet<Cat>()  // there is no need for catVet object
+    // val fishVet = Vet<Fish>() // and fishVet object.
 
     // Cat Contest
     println("--- Cat Contest -----------------------")
-    val catContest = Contest<Cat>(catVet)
+    val catContest = Contest<Cat>(petVet)
     catContest.addScore(catMancho, 30)
     catContest.addScore(catRancho, 80)
     catContest.addScore(catTancho, 60)
     catContest.addScore(catDancho, 95)
-    println(catContest.scores)
-    val catWon = catContest.getWinners().first()
-    println("Winner: " + catWon.name)
+    println(catContest.scores)  // print all cats scores
+    val catWon = catContest.getWinners().first() // get winner
+    println("Winner: " + catWon.name) // print winner name
     println()
 
     // Fish Contest
     println("--- Fish Contest -----------------------")
-    val fishContest = Contest<Fish>(fishVet)
+    val fishContest = Contest<Fish>(petVet)
     fishContest.addScore(fishFinny, 50)
     fishContest.addScore(fishMinny, 65)
     fishContest.addScore(fishKinny, 85)
-    println(fishContest.scores)
-    val fishWon = fishContest.getWinners().first()
-    println("Winner: " + fishWon.name)
+    println(fishContest.scores)  // print all fish scores
+    val fishWon = fishContest.getWinners().first() // get winner
+    println("Winner: " + fishWon.name) // print winner name
     println()
 
     // Pet Contest
@@ -45,14 +46,14 @@ fun main() {
     petContest.addScore(fishFinny, 45)
     petContest.addScore(fishMinny, 55)
     petContest.addScore(catMancho, 35)
-    println(petContest.scores)
-    val petWon = petContest.getWinners().first()
-    println("Winner: " + petWon.name)
+    println(petContest.scores)  // print all pets scores
+    val petWon = petContest.getWinners().first() // get winner
+    println("Winner: " + petWon.name) // print winner name
     println()
 
     // Vet Treats Winners
-    catVet.treat(catWon)
-    fishVet.treat(fishWon)
+    petVet.treat(catWon)
+    petVet.treat(fishWon)
     petVet.treat(petWon)
     println()
 
@@ -103,7 +104,7 @@ class Fish(name: String): Pet(name) {
 
 
 // Contest class Generic
-class Contest<T: Pet>(var vet: Vet<T>) {
+class Contest<T: Pet>(var vet: Vet<in T>) {  // 'in' means Contra-variant
 
     var scores: MutableMap<T, Int> = mutableMapOf()
 
@@ -137,7 +138,7 @@ class Vet<T: Pet> {
 
 
 // Retailer interface Generic
-interface Retailer<out T> {
+interface Retailer<out T> { // 'out' means Co-variant
 
     fun sell(): T
 }
