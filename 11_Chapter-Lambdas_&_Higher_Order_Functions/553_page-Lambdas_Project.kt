@@ -27,23 +27,33 @@ fun main() {
     myLambda() // variable used as a function.
     println()
 
-    // Lambda in Functions -----------------
 
-    // convertTemp function calls
-    val farToCel = convertTemp(20.0, {c -> c * 1.8 + 32}) // or use 'it' instead of 'c'.
-    println(farToCel)
-    val celToFar = convertTemp(68.0, {(it - 32) / 1.8}) // or use 'f->f' instead of 'it'.
+    // Lambda in Functions -----------------
+    
+    // Lambda in Function Parameters ------------
+    // convertTemp function calls - paranthesis becoz of 2 parameters. 
+    val celToFar = convertTemp(20.0, {c -> c * 1.8 + 32}) // or use 'it' instead of 'c'.
     println(celToFar)
+    val farToCel = convertTemp(68.0, {(it - 32) / 1.8}) // or use 'f->f' instead of 'it'.
+    println(farToCel)
+    println()
+    // convertFive function call - no paranthesis for single lambda parameter.
+    convertFive { it * 1.8 + 32 }
     println()
 
-    // convertFive function call
-    convertFive { it * 1.8 + 32 }
+    // Lambda in Function Return type ------------
+    val kgToPound = getConversionLambda("KgToPound") (55.0)
+    println("55.0 kg is converted to " + kgToPound.toFloat() + " lb")
+    val poundToTon = getConversionLambda("PoundToTon") (55.0)
+    println("100.0 lb is converted to " + poundToTon.toFloat() + " ton")
+
 
 
     println(); println()
 }
 
-// convertTemp function
+
+// convertTemp function - 2 parameters - 1 lambda in this.
 fun convertTemp(x:Double, converter:(Double)->Double ): Double {
 
     val result = converter(x)
@@ -51,10 +61,25 @@ fun convertTemp(x:Double, converter:(Double)->Double ): Double {
     return result
 }
 
-// convertFive function
+// convertFive function - single lambda parameter.
 fun convertFive(converter:(Int)->Double): Double {
 
     val result = converter(5)
     println("5 is converted to $result")
     return result
 }
+
+// getConversionLambda function - lambda in return type value.
+fun getConversionLambda(str: String): (Double)->Double {
+
+    if (str == "CelToFar") {
+        return { it * 1.8 + 32 }
+    } else if (str == "KgToPound") {
+        return { it * 2.204623 }
+    } else if (str == "PoundToTon") {
+        return { it / 2000.0 }
+    } else {
+        return { it }
+    }
+}
+
