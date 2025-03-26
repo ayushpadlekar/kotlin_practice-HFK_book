@@ -44,17 +44,24 @@ fun main() {
     // Lambda in Function Return type ------------
     val kgToPound = getConversionLambda("KgToPound") (55.0)
     println("55.0 kg is converted to " + kgToPound.toFloat() + " lb")
-    val poundToTon = getConversionLambda("PoundToTon") (55.0)
+    val poundToTon = getConversionLambda("PoundToTon") (100.0)
     println("100.0 lb is converted to " + poundToTon.toFloat() + " ton")
+    println()
+
+    // Lambda in Function Parameters & Return type, both -----------
+    val kgToTon = combine({it * 2.204623}, {it / 2000.0}) (20.0)
+    println("20 kg is converted to " + kgToTon + " ton")
 
 
 
     println(); println()
 }
 
+typealias DoubleToDouble = (Double)->Double
+
 
 // convertTemp function - 2 parameters - 1 lambda in this.
-fun convertTemp(x:Double, converter:(Double)->Double ): Double {
+fun convertTemp(x:Double, converter: DoubleToDouble ): Double {
 
     val result = converter(x)
     println("${x} is converted to ${result.toFloat()}")
@@ -70,7 +77,7 @@ fun convertFive(converter:(Int)->Double): Double {
 }
 
 // getConversionLambda function - lambda in return type value.
-fun getConversionLambda(str: String): (Double)->Double {
+fun getConversionLambda(str: String): DoubleToDouble {
 
     if (str == "CelToFar") {
         return { it * 1.8 + 32 }
@@ -81,5 +88,11 @@ fun getConversionLambda(str: String): (Double)->Double {
     } else {
         return { it }
     }
+}
+
+// combine function - lambda in both, parameters & return type.
+fun combine( lam1: DoubleToDouble, lam2: DoubleToDouble ): DoubleToDouble {
+    
+    return { x:Double -> lam2(lam1(x)) }
 }
 
