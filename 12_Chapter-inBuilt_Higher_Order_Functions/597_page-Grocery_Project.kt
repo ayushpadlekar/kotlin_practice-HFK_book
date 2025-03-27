@@ -1,7 +1,7 @@
 // HFK C12 Page 597 - Built-in Higher Order Functions -
 // Grocery Project
 // - use built-in higher order functions like -
-// maxByOrNull, minByOrNull, sumOf, sumByDouble
+// maxByOrNull, minByOrNull, sumOf, sumByDouble, filter, filterNot, map
 
 // Grocery data class
 data class Grocery (
@@ -27,31 +27,69 @@ fun main() {
     )
     // print the whole list
     println("List:- ")
-    for (i in groceries) {
-        println(i)
+    for (g in groceries) {
+        println(g)
     }
     println(); println()
     
 
-    println("---Highest unitPrice ----------") // .maxByOrNull
+    println("---Highest unitPrice ---------- .maxByOrNull") // .maxByOrNull
     val highestUnitPrice = groceries.maxByOrNull { it.unitPrice }
     println("name: ${highestUnitPrice?.name}, unitPrice: ${highestUnitPrice?.unitPrice}")
     println()
 
-    println("---Lowest quantity ----------") // .minByOrNull
+    println("---Lowest quantity ---------- .minByOrNull") // .minByOrNull
     val lowestQuantity = groceries.minByOrNull { it.quantity }
     println("name: ${lowestQuantity?.name}, quantity: ${lowestQuantity?.quantity}")
     println()
 
-    println("---Sum quantity ----------") // .sumOf
+    println("---Sum quantity ---------- .sumOf") // .sumOf
     // use .sumOf instead of .sumBy or .sumByDouble , as .sumBy is deprecated.
     val sumQuantity = groceries.sumOf { it.quantity }
     println("Sum quantity: $sumQuantity")
     println()
 
-    println("---Total price ----------") // .sumOf
+    println("---Total price ---------- .sumOf") // .sumOf
     val totalPrice = groceries.sumOf { it.unitPrice }
     println("Total price: $totalPrice")
+    println()
+
+    println("---Filter by Vegetable category ---------- .filter") // .filter
+    val filterVegetables = groceries.filter { it.category == "Vegetable" }
+    for(f in filterVegetables) {
+        println(f)
+    }
+    println()
+
+    println("---Items with unitPrice > 4.0 ---------- .filter") // .filter
+    val filterByUnitPrice = groceries.filter { it.unitPrice > 4.0 }
+    for(f in filterByUnitPrice) {
+        println(f)
+    }
+    println()
+
+    println("---Filter by Not Vegetable category ---------- .filterNot") // .filterNot
+    val filterNoVegetables = groceries.filterNot { it.category == "Vegetable" }
+    for(f in filterNoVegetables) {
+        println(f)
+    }
+    println()
+
+    println("---Map the List of Grocery Names in new list ---------- .map") // .map
+    val groceryNames = groceries.map { it.name }
+    println(groceryNames) // here groceryNames is a new List of names.
+    println()
+
+    println("---Map Grocery unitPrice multiplied by 0.5 in new list ---------- .map") // .map
+    val newUnitPrices = groceries.map { it.unitPrice * 0.5 }
+    println(newUnitPrices) // here newUnitPrices is a new List of unitPrice reduced to half the og unitPrice.
+    println()
+
+    println("---Chain together - unitPrice multiplied by 2 if > 4.0 ---------- .filter & .map") // .filter .map
+    val filterMapUnitPrices = groceries.filter { it.unitPrice > 4.0 }.map { it.unitPrice * 2}
+    for(f in filterMapUnitPrices) {
+        println(f)
+    }
     println()
 
     
