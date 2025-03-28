@@ -1,7 +1,8 @@
 // HFK C12 Page 597 - Built-in Higher Order Functions -
 // Grocery Project
 // - use built-in higher order functions like -
-// maxByOrNull, minByOrNull, sumOf, sumByDouble, filter, filterNot, map
+// maxByOrNull, minByOrNull, sumOf, sumByDouble,
+// filter, filterNot, map, forEach, groupBy, fold
 
 // Grocery data class
 data class Grocery (
@@ -81,8 +82,8 @@ fun main() {
     println()
 
     println("---Map Grocery unitPrice multiplied by 0.5 in new list ---------- .map") // .map
-    val newUnitPrices = groceries.map { it.unitPrice * 0.5 }
-    println(newUnitPrices) // here newUnitPrices is a new List of unitPrice reduced to half the og unitPrice.
+    val halfUnitPrices = groceries.map { it.unitPrice * 0.5 }
+    println(halfUnitPrices) // here halfUnitPrices is a new List of unitPrice reduced to half the og unitPrice.
     println()
 
     println("---Chain together - unitPrice multiplied by 2 if > 4.0 ---------- .filter & .map") // .filter .map
@@ -92,9 +93,61 @@ fun main() {
     }
     println()
 
+    println("---Print names of groceries using forEach ---------- .forEach") // .forEach
+    groceries.forEach { print("${it.name}, ") }
+    println(); println()
+
+    println("---Print names of groceries with unitPrice > 4.0 ---------- .filter .forEach") // .filter .forEach
+    groceries.filter {it.unitPrice > 4.0}.forEach { print("${it.name}, ") }
+    println(); println()
+
+    println("---Print names of groceries stored in variable, using forEach ---------- .forEach") // .forEach
+    var itemNames = ""
+    groceries.forEach { itemNames += "${it.name}  " }
+    println(itemNames) 
+    println()
+
+    println("---Groceries grouped by category ---------- .groupBy .forEach") // .groupBy .forEach
+    groceries.groupBy { it.category }.forEach {
+        println(it.key)
+        it.value.forEach { println("   ${it.name}") }
+    }
+    println()
+
+    // .fold example on list of ints.
+    foldSumInts()
+
+    println("---Concatenate name of each grocery items ---------- .fold") // .fold
+    val groceryNamesConcatenate = groceries.fold("") {initial, item -> initial + "${item.name} "}
+    println(groceryNamesConcatenate)
+    println()
+
+    println("---Subtract initial amount after buying groceries ---------- .fold") // .fold
+    var amount = 100.0
+    println("Initial amount: $amount")
+    val totalCost = groceries.sumOf { it.unitPrice * it.quantity }
+    println("Total cost of all items: $totalCost")
+    val change = groceries.fold(amount) { amount, item -> amount - item.unitPrice * item.quantity }
+    println("Amount left: $change")
+    println()
+
     
 
 
     println(); println()
+}
+
+// .fold example on list of ints
+fun foldSumInts() {
+    println("---Running sum, product of ints using fold ------- .fold")
+    val ints = listOf(1,2,3,4)
+    print("Ints: ")
+    ints.forEach { print("$it ") }
+    println()
+    val sumOfInts = ints.fold(0) { initial, item -> initial + item }
+    println("sumOfInts: $sumOfInts")
+    val productOfInts = ints.fold(1) { initial, item -> initial * item }
+    println("productOfInts: $productOfInts")
+    println()
 }
 
