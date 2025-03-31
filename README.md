@@ -90,3 +90,24 @@ Learning kotlin programming by practicing codes from "Head First Kotlin" Book. T
 • [`465_page-Maps_MutableMaps_Practice.kt`](09_Chapter-Collections_List_Set_Map/465_page-Maps_MutableMaps_Practice.kt)
 
 • [`475-479_page-PoolPuzzle_&_MixedMessages_Exercise.kt`](09_Chapter-Collections_List_Set_Map/475-479_page-PoolPuzzle_&_MixedMessages_Exercise.kt)
+
+
+## [Chapter 10](10_Chapter-Generics)
+
+• [`489_page-Pet_Contest_Project.kt`](10_Chapter-Generics/489_page-Pet_Contest_Project.kt)
+
+
+## [Chapter 11](11_Chapter-Lambdas_&_Higher_Order_Functions)
+
+• [`553_page-Lambdas_Project.kt`](11_Chapter-Lambdas_&_Higher_Order_Functions/553_page-Lambdas_Project.kt)
+
+• [`555_page-Mixed_Messages_Exercise.kt`](11_Chapter-Lambdas_&_Higher_Order_Functions/555_page-Mixed_Messages_Exercise.kt)
+
+• [`581_page-Code_Magnets_Exercise.kt`](11_Chapter-Lambdas_&_Higher_Order_Functions/581_page-Code_Magnets_Exercise.kt)
+
+
+## [Chapter 12](12_Chapter-inBuilt_Higher_Order_Functions)
+
+• [`597_page-Grocery_Project.kt`](12_Chapter-inBuilt_Higher_Order_Functions/597_page-Grocery_Project.kt)
+
+• [`629_page-Mixed_Messages_Exercise.kt`](12_Chapter-inBuilt_Higher_Order_Functions/629_page-Mixed_Messages_Exercise.kt)
