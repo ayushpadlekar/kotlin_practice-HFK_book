@@ -111,3 +111,23 @@ Learning kotlin programming by practicing codes from "Head First Kotlin" Book. T
 • [`597_page-Grocery_Project.kt`](12_Chapter-inBuilt_Higher_Order_Functions/597_page-Grocery_Project.kt)
 
 • [`629_page-Mixed_Messages_Exercise.kt`](12_Chapter-inBuilt_Higher_Order_Functions/629_page-Mixed_Messages_Exercise.kt)
+
+
+## [Appendix A - Coroutines](Appendix_A-Coroutines)
+
+• [`640_page-Beats.kt`](Appendix_A-Coroutines/640_page-Beats.kt)
+
+
+## [Appendix B - Testing](Appendix_B-Testing)
+
+• [`652_page-Totaller.kt`](Appendix_B-Testing/652_page-Totaller.kt)
+
+• [`652_page-TotallerTest.kt`](Appendix_B-Testing/652_page-TotallerTest.kt)
+
+
+## [Appendix C - Leftovers - Enum, Sealed Class](Appendix_C-Leftovers)
+
+• [`664_page-Enum_Class.kt`](Appendix_C-Leftovers/664_page-Enum_Class.kt)
+
+• [`666_page-Sealed_Class.kt`](Appendix_C-Leftovers/666_page-Sealed_Class.kt)
+
